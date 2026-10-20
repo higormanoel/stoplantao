@@ -1,0 +1,51 @@
+/* Identidade iFH aplicada ao jogo: laranja #FF4200 + preto, Montserrat (fonte das peças iFH). */
+
+@font-face {
+  font-family: 'Montserrat';
+  src: url('/assets/fonts/montserrat-variable.woff2') format('woff2-variations');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  /* marca iFH */
+  --ifh-primary: #ff4200;
+  --ifh-accent: #ff4e2d;
+  --ifh-black: #000000;
+  --ifh-dark: #3e3e3e;
+  --ifh-light: #ededed;
+  --ifh-offwhite: #fcfcf9;
+  --ifh-white: #ffffff;
+
+  /* superfícies do jogo (pretos e grafites, como a linha dark do iFH) */
+  --ink: #0a0a0a;
+  --text-dark: #141414;
+  --bg-deep: #060606;
+  --frame: #151515;
+  --frame-2: #1d1d1d;
+  --panel: #101010;
+  --panel-2: #222222;
+  --line: #3a3a3a;
+  --line-soft: #2b2b2b;
+  --muted: #b8b8b8;
+  --muted-2: #8c8c8c;
+
+  /* estados */
+  --orange: var(--ifh-primary);
+  --orange-hi: #ff6a2b;
+  --orange-lo: #c23200;
+  --mint: #3ddc97;
+  --mint-lo: #1f9e66;
+  --red: #ff3b5c;
+  --red-lo: #b5152f;
+  --yellow: #ffc93c;
+
+  --radius-lg: 30px;
+  --radius: 20px;
+  --radius-sm: 14px;
+
+  --font: 'Montserrat', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --shadow-hard: 0 6px 0 var(--ink);
+  --outline-text: 0 3px 0 var(--ink), 2px 2px 0 var(--ink), -2px 2px 0 var(--ink), 2px -1px 0 var(--ink), -2px -1px 0 var(--ink);
+}

@@ -1,0 +1,9 @@
+.git
+**/node_modules
+**/dist
+**/.env
+reference
+assets-source
+frontend/public
+.claude
+.superpowers

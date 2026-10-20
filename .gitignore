@@ -1,0 +1,17 @@
+node_modules/
+dist/
+.DS_Store
+*.log
+.env
+.env.*
+!.env.example
+
+# Acervo privado de produção; o jogo usa frontend/public/assets/.
+reference/
+assets-source/
+
+# Configurações, planos e caches locais dos agentes.
+.claude/
+.superpowers/
+docs/superpowers/
+.impeccable/hook.cache.json

@@ -1,0 +1,23 @@
+{
+  "detector": {
+    "ignoreRules": [],
+    "ignoreFiles": [],
+    "ignoreValues": [
+      {
+        "rule": "side-tab",
+        "value": "*",
+        "files": [
+          "frontend/src/styles/components.css"
+        ],
+        "createdAt": "2026-10-20T09:07:12.840Z",
+        "reason": "Codex: narrator__bubble::after uses transparent borders and border-left to draw the speech-bubble pointer toward Dr. Felipe; this is not a card accent."
+      },
+      {
+        "rule": "bounce-easing",
+        "value": "wobble",
+        "createdAt": "2026-10-20T09:07:12.910Z",
+        "reason": "Codex: wobble rotates the cartoon stop sign smoothly between -6deg and 6deg with ease-in-out, without elastic easing or overshoot; the game brand uses a playful stop sign and reduced-motion preferences are respected."
+      }
+    ]
+  }
+}
