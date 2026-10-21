@@ -8,7 +8,7 @@ Criei o Stoplantão para um momento de descontração da equipe. A ideia foi peg
 
 **Um pouco dessa experiência, com som:**
 
-[![Assistir à demonstração com áudio](docs/media/video-poster.png)](docs/media/gameplay.mp4)
+https://github.com/user-attachments/assets/b4e90b1a-d7dd-4279-b507-8b2555d9c25b
 
 [Assistir à demonstração com áudio](docs/media/gameplay.mp4)
 
