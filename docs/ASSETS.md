@@ -17,6 +17,9 @@ ou compilar o jogo.
 
 ## Personagens (avatares)
 
+A receita pública com prompt copiável, exemplo do Higor e ajuste localizado está
+em [Como gerar personagens no estilo do Stoplantão](CHARACTER_PROMPT.md).
+
 - Ferramenta: Higgsfield, modelo **GPT Image 2.5**, qualidade `high`, fundo transparente, 1:1, 1k.
 - Referência: a foto de cada pessoa em `reference/team/<id>.png`.
   Os IDs das fotos enviadas ao Higgsfield estão em `assets-source/avatars/higgsfield-media-ids.json`.

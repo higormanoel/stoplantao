@@ -1,124 +1,53 @@
-# Stoplantão — o Stop do time iFH
+# Stoplantão
 
-Jogo de Stop (adedonha) no estilo do [Stopots](https://stopots.com/pt), com a identidade do iFH,
-o time inteiro como personagens e a voz do Dr. Felipe comentando cada STOP.
+**O time iFH virou jogo.**
 
-## Rodar
+![Stoplantão, um jogo de Stop personalizado para o time iFH](docs/media/cover.png)
 
-```bash
-cd frontend
-npm install
-npm run dev
-```
+Criei o Stoplantão para um momento de descontração da equipe. A ideia foi pegar uma brincadeira conhecida e dar a ela a nossa cara: os colegas como personagens, a identidade do iFH e a voz do Dr. Felipe participando da diversão.
 
-Abre em `http://localhost:5173`. Sem backend, o jogo roda no **modo treino**: os outros
-colaboradores entram como bots, respondem, dão STOP e votam.
+**Um pouco dessa experiência, com som:**
 
-## Como funciona
+[![Assistir à demonstração com áudio](docs/media/video-poster.png)](docs/media/gameplay.mp4)
 
-1. **Entrar no plantão** → **Quem é você?** (escolha seu personagem).
-2. **Jogar** (sala rápida com 5 colegas) ou **Criar sala** (rodadas, tempo, categorias, quantos colegas).
-3. Lobby → sorteio da letra → preencher categorias → **STOP!** → vale ou não vale? → placar → pódio.
-4. Pontos: 10 resposta única, 5 repetida, 0 inválida.
+[Assistir à demonstração com áudio](docs/media/gameplay.mp4)
 
-## Pastas
+*Montagem de 26 segundos com trechos do modo treino e áudio do próprio jogo.*
 
-```
-ADEDONHA/
-├── frontend/              app React + TypeScript + Vite (pronto)
-│   ├── public/assets/     avatares (WebP), voz (m4a), fonte, logo iFH
-│   └── src/
-│       ├── game/          motor puro compartilhado pelo navegador e pelo servidor
-│       ├── net/           transporte local (bots) e WebSocket (backend)
-│       ├── store/         estado da UI (zustand) e reação a eventos
-│       ├── audio/         efeitos sintetizados + voz do Dr. Felipe
-│       ├── data/          time, categorias, falas, banco de palavras
-│       ├── components/    logo, avatar, botões, timer, narrador, overlay de STOP
-│       ├── screens/       splash, quem é você, home, sala (lobby → pódio)
-│       └── styles/        tokens iFH, base, componentes, telas
-├── backend/               servidor WebSocket Node + TypeScript
-├── docs/
-│   ├── BACKEND_CONTRACT.md  protocolo e regras para o servidor
-│   ├── BRAND.md             nome, cores, tipografia, elementos
-│   └── ASSETS.md            como os personagens e a voz foram gerados
-└── AGENTS.md              instruções de desenvolvimento
-```
+## Uma marca familiar, em clima de brincadeira
 
-O repositório público inclui os avatares, a voz, a fonte e a logo usados pelo jogo.
-As fotos de referência (`reference/`) e os materiais de produção (`assets-source/`)
-ficam apenas no acervo local e não são necessários para rodar ou compilar o projeto.
+Escolhi manter o laranja, o preto e a Montserrat que já fazem parte das peças do iFH. Queria que o jogo fosse reconhecível antes mesmo de alguém começar a jogar.
 
-## Modo online
+A partir dessa base, trouxe letras grandes, contornos marcados e botões que lembram peças de um jogo. A intenção foi dar energia e leveza à marca nesse momento de pausa da equipe.
 
-Use Node.js 22 ou superior. Em um terminal, inicie o servidor:
+## O time como protagonista
 
-```bash
-cd backend
-npm ci
-cp .env.example .env
-npm run dev
-```
+Em vez de personagens genéricos, coloquei as 16 pessoas do time no centro da experiência. A proposta era que cada um pudesse se reconhecer e encontrar os colegas naquele universo.
 
-Em outro terminal, conecte o frontend:
+![Seleção com os 16 personagens do time iFH](docs/media/characters.png)
 
-```bash
-cd frontend
-VITE_WS_URL=ws://localhost:8787/ws npm run dev
-```
+*O elenco faz parte da identidade do jogo: são as pessoas com quem a equipe convive.*
 
-Escolha **Criar sala → Sala online**, copie o código e entre em outro navegador
-com outro personagem. O botão **Jogar** continua abrindo o treino com bots.
+Escolhi um cartum de contornos pretos grossos, formas geométricas e cores chapadas para afastar os retratos de uma representação formal. O traço simplificado dá espaço à expressão e ao humor, preservando características que ajudam a reconhecer cada pessoa.
 
-O servidor importa o motor do frontend e mantém salas em memória. Uma única
-instância atende todas as salas; reiniciar o processo encerra as partidas.
-As sessões usam tokens secretos, e a reconexão preserva a vaga e a pontuação.
-Salas sem conexões expiram após 30 minutos.
+Os personagens foram produzidos com IA a partir de referências fotográficas e ajustados para manter a semelhança e a unidade do conjunto. O Dr. Felipe também ganhou poses para acompanhar suas falas.
 
-Para gerar e executar o backend de produção:
+## O cotidiano entrou na brincadeira
 
-```bash
-cd backend
-npm ci
-npm run build
-npm start
-```
+O nome **Stoplantão** junta Stop e Plantão. A referência ao cotidiano aparece com humor: o tempo da rodada lembra um monitor cardíaco, a letra fica em uma placa de PARE e o STOP vira um acontecimento na tela.
 
-O bundle fica em `backend/dist/server.js` e precisa apenas da dependência `ws`
-em execução. O frontend usa `VITE_WS_URL` durante o build; na publicação, configure
-a URL `wss://` do servidor. Defina `ALLOWED_ORIGINS` no backend com a origem exata
-do frontend. As demais configurações estão em `backend/.env.example`.
+![Rodada do Stoplantão com letra sorteada, categorias e cronômetro em forma de monitor cardíaco](docs/media/round.png)
 
-Também é possível construir o contêiner com contexto na raiz do repositório:
+*O monitor cardíaco transforma uma função comum, a contagem do tempo, em um detalhe do universo iFH.*
 
-```bash
-docker build -f backend/Dockerfile -t stoplantao-backend .
-docker run --rm -p 8787:8787 --env-file backend/.env stoplantao-backend
-```
+A voz do Dr. Felipe aproxima o jogo de uma presença familiar para o time. As falas, produzidas com IA, aparecem junto de legendas e expressões do personagem. Quis que o som também carregasse a personalidade da experiência.
 
-`GET /health` retorna `{ "ok": true }`. O endpoint do jogo é `/ws`.
-O serviço precisa de hospedagem que mantenha um processo Node e conexões WebSocket.
+![Pódio do Stoplantão com personagens e pontuação final](docs/media/podium.png)
 
-Detalhes em [docs/BACKEND_CONTRACT.md](docs/BACKEND_CONTRACT.md).
+*Até o encerramento mantém os colegas em cena, com o mesmo tom de brincadeira da partida.*
 
-## Verificar
+## O prompt dos personagens
 
-```bash
-cd backend
-npm test
-npm run build
-```
+Deixei documentado o [prompt para criar personagens com o mesmo aspecto visual](docs/CHARACTER_PROMPT.md), incluindo a direção do traço, as características individuais e os cuidados para manter a consistência do elenco.
 
-```bash
-cd frontend
-npm test
-npm run simulate
-npm run lint
-npm run build
-```
-
-## Build
-
-```bash
-cd frontend
-npm run build      # gera frontend/dist (estático, pode ir para Vercel)
-```
+As fotos de referência e os materiais brutos de produção ficam no acervo privado. Aqui estão as ilustrações finais usadas no jogo.
